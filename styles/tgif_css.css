@@ -1,0 +1,47 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	}
+#head-img {
+    background-image: url(../images/capitolusa2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: 5px;
+    background-size: 500px 300px;
+    height: 200px;
+}
+#mail{
+        margin-right: 30px;
+}
+ ul :hover {
+  background-color: rgb(235, 240, 243);
+}
+#main-title{
+	color: blue;
+	padding:15px;
+	margin-top: 10px;
+	text-align: center;
+}
+#side-img {
+	margin-top: 130px;
+    height: 500px;
+}
+.container th{
+	background: #a3b6c9;
+}
+.navbar bg-light{
+	background-color:#cde0f3
+}
+.d-flex{
+ display: flex;
+ align-items:center; 
+}
+#tglance {
+margin-top: 50px;
+text-align: right;
+}
+#footer{
+	background-color:#c7d4e1;
+}
