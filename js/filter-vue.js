@@ -5,8 +5,6 @@ if (document.title === "Senate - TGIF") {
     url = "https://api.propublica.org/congress/v1/113/house/members.json"
   }
 
-
-
 var members=[];
 var senadores=[];
 
@@ -16,7 +14,7 @@ var app = new Vue({
       members:[],
       senadores:[],
         },
-   
+
   created: function () {
       this.getData();
   },
@@ -33,31 +31,31 @@ var app = new Vue({
           })
           .then(function (data) {
             console.log(data);
-            app.members = data.results[0].members; 
-            
+            app.members = data.results[0].members;
+
             app.senadores = app.members;
-         
+
            app.filterMember();
-           
+
           })
-         
+
           .catch(function (error) {
               console.log(error);
           })
-  
-}, 
-  
+
+},
+
   filterMember: function() {
-    
+
     var republican = document.getElementById("republican");
     var democrat = document.getElementById("democrat");
     var independent = document.getElementById("independent");
     var estado = document.getElementById("estado");
-    
-    
+
+
     var members = app.senadores;
     app.members =[];
-   
+
     for (let i = 0; i < members.length; i++) {
       if (estado.value == members[i].state || estado.value == 'all' ) {
         if (republican.checked == true && members[i].party == "R") {
@@ -76,9 +74,9 @@ var app = new Vue({
     }
     var senadores=Array.from(app.members);
     console.log(senadores);
-    
+
   }, //filterMember
  } //cierra method
 })//cierra Vue
 
-    
+
