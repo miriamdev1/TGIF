@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/tgif_css.css">
-    
+
 
     <title>House - TGIF</title>
 </head>
+
 <body>
     <header class="container">
         <div id="head-img" class="d-flex mb3">
@@ -29,19 +30,24 @@
                     </li>
                     <!-- Dropdown -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle font-weight-bolder" href="#" id="navbardrop" data-toggle="dropdown">Congress 113</a>
+                        <a class="nav-link dropdown-toggle font-weight-bolder" href="#" id="navbardrop"
+                            data-toggle="dropdown">Congress 113</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="house-data.html">House</a>
                             <a class="dropdown-item" href="senate-data.html">Senate</a>
                         </div>
+                    </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle font-weight-bolder" href="#" data-toggle="dropdown">Attendance</a>
+                        <a class="nav-link dropdown-toggle font-weight-bolder" href="#"
+                            data-toggle="dropdown">Attendance</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="house-attendance.html">House</a>
                             <a class="dropdown-item" href="senate-attendance.html">Senate</a>
                         </div>
+                    </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle font-weight-bolder" href="#" data-toggle="dropdown">Party Loyalty</a>
+                        <a class="nav-link dropdown-toggle font-weight-bolder" href="#" data-toggle="dropdown">Party
+                            Loyalty</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="house-loyalty.html">House</a>
                             <a class="dropdown-item" href="senate-loyalty.html">Senate</a>
@@ -55,25 +61,33 @@
         <section>
             <article>
                 <h2 id="main-title">Congressmen</h2>
-                <p>The major power of the House is to pass federal legislation that affects the entire country, although its
-                    bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law
-                    (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The
-                    House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached
+                <p>The major power of the House is to pass federal legislation that affects the entire country, although
+                    its
+                    bills must also be passed by the Senate and further agreed to by the U.S. President before becoming
+                    law
+                    (unless both the House and Senate re-pass the legislation with a two-thirds majority in each
+                    chamber). The
+                    House has some exclusive powers: the power to initiate revenue bills, to impeach officials
+                    (impeached
                     officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no
                     majority in the Electoral College.</p>
-                <p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but
+                <p>Each U.S. state is represented in the House in proportion to its population as measured in the
+                    census, but
                     every state is entitled to at least one representative. </p>
             </article>
-            <div id="app"> <!--Vue-js-->
+            <div id="app">
+                <!--Vue-js-->
                 <div class="filters d-flex justify-content-between">
                     <div>
                         <form id="party">
                             Filter by party:
                             <input type="checkbox" name="party" @click="filterMember" id="republican" value="R" checked>
                             <label for="republican"> Republican</label>
-                            <input type="checkbox" name="party" v-on:click="filterMember" id="democrat" value="D" checked>
+                            <input type="checkbox" name="party" v-on:click="filterMember" id="democrat" value="D"
+                                checked>
                             <label for="democrat"> Democrat</label>
-                            <input type="checkbox" name="party" v-on:click="filterMember" id="independent" value="I" checked>
+                            <input type="checkbox" name="party" v-on:click="filterMember" id="independent" value="I"
+                                checked>
                             <label for="independent"> Independent</label>
                         </form>
                     </div>
@@ -147,7 +161,8 @@
                     </thead>
                     <tbody>
                         <tr v-for="member in members">
-                            <td><a target="_blank" v-bind:href=member.url>{{member.first_name}} {{member.middle_name}} {{member.last_name}}</a></td>
+                            <td><a target="_blank" v-bind:href="member.url">{{member.first_name}} {{member.middle_name}}
+                                    {{member.last_name}}</a></td>
                             <td>{{ member.party }}</td>
                             <td>{{ member.state }}</td>
                             <td>{{ member.seniority }}</td>
@@ -155,17 +170,25 @@
                         </tr>
                     </tbody>
                 </table>
-            </div> <!--cierra app-->
+            </div>
+            <!--fin app-->
         </section>
     </div>
-    <footer class="bg-light text-center container p-2" style="background-color: #adc3da;" id="footer">2016 TGIF | All rights reserved</footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    <footer class="bg-light text-center container p-2" style="background-color: #adc3da;" id="footer">2016 TGIF | All
+        rights reserved</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
     <script src="js/filter-vue.js"></script>
 </body>
+
 </html>
