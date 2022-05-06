@@ -1,4 +1,7 @@
 # TGIF (Transparent Government in Fact)
+Desarrollo de una aplicación web que muestre datos del Congreso utilizando  la API de ProPublica Congress en un página HTML. 
+
+
 JavaScript technologies, including AJAX, JSON, and RESTful APIs.
 
 - JavaScript and sophisticated JavaScript libraries, such as jQuery and AngularJS
