@@ -6,7 +6,7 @@ if (document.title === "Senate - TGIF") {
 
 
 
-var statistics = {
+let statistics = {
   "number_of_republicans": 0,
   "number_of_democrats": 0,
   "number_of_independents": 0,
@@ -23,9 +23,9 @@ var statistics = {
   "loyal_Bottom": []
  };
 
-  
- 
- var app = new Vue({
+
+
+ const app = new Vue({
   el: "#app",
   data: {
     statistics:statistics,
@@ -34,7 +34,7 @@ var statistics = {
     loyal_Top: [],
     loyal_Bottom:[],
     members:[],
-    memberTop:[],  
+    memberTop:[],
 
      republican : [],
      democrat : [],
@@ -53,31 +53,31 @@ methods: {
      headers:{
         "X-API-Key": "B0XqY0T7xhm1JCRGP4GMP96DmFErfu3wWcm2uu4O"
      }
-   })  
+   })
   .then(function (response) {
     if (response.ok)
       return response.json();
   })
   .then(function (data) {
       console.log(data);
-      app.members = data.results[0].members; 
+      app.members = data.results[0].members;
       app.senadores = app.members;
       app.initTable();
-    
-   }) 
+
+   })
   .catch(function (error) {
     //console.log(error);
   })
- },   
-    
+ },
+
  initTable: function (){
- 
+
   members = app.members;
-  var arrayParty = [];
-     
-  var republican = app.members.filter(member => member.party == "R");
-  var democrat = app.members.filter ( member => member.party == "D");
-  var independent = app.members.filter(member => member.party == "I");
+  let arrayParty = [];
+
+  let republican = app.members.filter(member => member.party == "R");
+  let democrat = app.members.filter ( member => member.party == "D");
+  let independent = app.members.filter(member => member.party == "I");
 
 
   statistics.number_of_republicans = republican.length;
@@ -109,23 +109,23 @@ methods: {
   function getLeastAndMostMembers(array, key, order) {
     let i = 0
     let percent = Math.round(array.length * 0.10);
-    var memberTop = [];
+    let memberTop = [];
     let arr = Array.from(array);
-  
+
    arr.sort((a,b) => order ? a[key] - b[key] : b[key] - a[key])
 
     while (i < percent || arr[i][key] == arr[i + 1][key]) {
         memberTop.push(arr[i]);
     i++;
     }
-  
-     return memberTop;  
-     
+
+     return memberTop;
+
   }
-   
+
   console.log(JSON.stringify(statistics,null,2));
- 
+
   }, //fin initTable
 } // cierra methods
 
-});  //cierra Vue 
+});  //cierra Vue
