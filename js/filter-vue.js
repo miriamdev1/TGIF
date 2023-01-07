@@ -1,8 +1,9 @@
+import PROPUBLICA_API_KEY from "./apikey.js"
 
 if (document.title === "Senate - TGIF") {
-  var  url = "https://api.propublica.org/congress/v1/113/senate/members.json"
+  let  url = "https://api.propublica.org/congress/v1/113/senate/members.json"
   } else if (document.title === "House - TGIF")  {
-  var  url = "https://api.propublica.org/congress/v1/113/house/members.json"
+  let  url = "https://api.propublica.org/congress/v1/113/house/members.json"
   }
 
 let members=[];
@@ -24,7 +25,7 @@ let app = new Vue({
     fetch(url, {
         method: "GET",
          headers: {
-                  "X-API-Key": PROPUBLICA_API_KEY
+                  "X-API-Key": "PROPUBLICA_API_KEY"
                 }
           })
           .then(function (response) {
