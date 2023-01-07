@@ -1,7 +1,7 @@
 if (document.title === "Senate - TGIF") {
-    url = "https://api.propublica.org/congress/v1/113/senate/members.json"
+    var url = "https://api.propublica.org/congress/v1/113/senate/members.json"
   } else if (document.title === "House - TGIF")  {
-    url = "https://api.propublica.org/congress/v1/113/house/members.json"
+    var url = "https://api.propublica.org/congress/v1/113/house/members.json"
   }
 
 
