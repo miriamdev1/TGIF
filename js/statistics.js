@@ -1,7 +1,5 @@
 import PROPUBLICA_API_KEY from "./apikey.js"
 
-
-
 if (document.title === "Senate - TGIF") {
    let url = "https://api.propublica.org/congress/v1/113/senate/members.json"
   } else if (document.title === "House - TGIF")  {
