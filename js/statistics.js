@@ -51,7 +51,7 @@ methods: {
   fetch(url,{
   method: 'GET',
      headers:{
-        "X-API-Key": "B0XqY0T7xhm1JCRGP4GMP96DmFErfu3wWcm2uu4O"
+        "X-API-Key": PROPUBLICA_API_KEY
      }
    })
   .then(function (response) {
@@ -123,7 +123,7 @@ methods: {
 
   }
 
-  console.log(JSON.stringify(statistics,null,2));
+  //console.log(JSON.stringify(statistics,null,2));
 
   }, //fin initTable
 } // cierra methods

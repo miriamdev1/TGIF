@@ -31,7 +31,7 @@ let app = new Vue({
                  return response.json();
           })
           .then(function (data) {
-            console.log(data);
+           // console.log(data);
             app.members = data.results[0].members;
 
             app.senadores = app.members;
@@ -74,7 +74,7 @@ let app = new Vue({
       }
     }
     let senadores=Array.from(app.members);
-    console.log(senadores);
+    //console.log(senadores);
 
   }, //filterMember
  } //cierra method
