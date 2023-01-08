@@ -1,9 +1,9 @@
 import PROPUBLICA_API_KEY from "./apikey.js"
 
 if (document.title === "Senate - TGIF") {
-   let url = "https://api.propublica.org/congress/v1/113/senate/members.json"
+   var url = "https://api.propublica.org/congress/v1/113/senate/members.json"
   } else if (document.title === "House - TGIF")  {
-    let url = "https://api.propublica.org/congress/v1/113/house/members.json"
+   var url = "https://api.propublica.org/congress/v1/113/house/members.json"
 }
 
 let statistics = {
@@ -23,8 +23,6 @@ let statistics = {
   "loyal_Bottom": []
  };
 
-
-
  let app = new Vue({
   el: "#app",
   data: {
@@ -36,11 +34,11 @@ let statistics = {
     members:[],
     memberTop:[],
 
-     republican : [],
-     democrat : [],
-     independent : [],
-     arrayParty:[],
-   },
+    republican : [],
+    democrat : [],
+    independent : [],
+    arrayParty:[],
+  },
 
 
 created: function () {
@@ -66,14 +64,13 @@ methods: {
 
    })
   .catch(function (error) {
-    //console.log(error);
+    console.log(error);
   })
  },
 
  initTable: function (){
-
+  let members = []
   members = app.members;
-  let arrayParty = [];
 
   let republican = app.members.filter(member => member.party == "R");
   let democrat = app.members.filter ( member => member.party == "D");
@@ -96,7 +93,8 @@ methods: {
   statistics.loyal_Bottom = getLeastAndMostMembers(members, "votes_with_party_pct", true);
 
   function average (arrayParty){
-    votedParty = 0;
+   let votedParty = 0;
+   let voted = 0;
     if(arrayParty.length == 0) return 0;
     arrayParty.forEach(function(member){
       votedParty += member.votes_with_party_pct
@@ -120,10 +118,9 @@ methods: {
     }
 
      return memberTop;
-
   }
 
-  console.log(JSON.stringify(statistics,null,2));
+  //console.log(JSON.stringify(statistics,null,2));
 
   }, //fin initTable
 } // cierra methods
